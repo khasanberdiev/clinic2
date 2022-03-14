@@ -1,0 +1,77 @@
+From 93b6538ca818806b5d0cff550280fe6e6e8032ba Mon Sep 17 00:00:00 2001
+From: John Thompson <john@springframework.guru>
+Date: Wed, 18 Jul 2018 18:14:12 -0400
+Subject:     Implement Interfaces for services. Closes #5
+
+
+diff --git a/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/OwnerService.java b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/OwnerService.java
+new file mode 100644
+index 0000000..1cf016f
+--- /dev/null
++++ b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/OwnerService.java
+@@ -0,0 +1,19 @@
++package guru.springframework.sfgpetclinic.services;
++
++import guru.springframework.sfgpetclinic.model.Owner;
++
++import java.util.Set;
++
++/**
++ * Created by jt on 7/18/18.
++ */
++public interface OwnerService {
++
++    Owner findByLastName(String lastName);
++
++    Owner findById(Long id);
++
++    Owner save(Owner owner);
++
++    Set<Owner> findAll();
++}
+diff --git a/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/PetService.java b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/PetService.java
+new file mode 100644
+index 0000000..f8aaced
+--- /dev/null
++++ b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/PetService.java
+@@ -0,0 +1,17 @@
++package guru.springframework.sfgpetclinic.services;
++
++import guru.springframework.sfgpetclinic.model.Pet;
++
++import java.util.Set;
++
++/**
++ * Created by jt on 7/18/18.
++ */
++public interface PetService {
++
++    Pet findById(Long id);
++
++    Pet save(Pet pet);
++
++    Set<Pet> findAll();
++}
+diff --git a/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/VetService.java b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/VetService.java
+new file mode 100644
+index 0000000..ec41d9b
+--- /dev/null
++++ b/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/VetService.java
+@@ -0,0 +1,17 @@
++package guru.springframework.sfgpetclinic.services;
++
++import guru.springframework.sfgpetclinic.model.Vet;
++
++import java.util.Set;
++
++/**
++ * Created by jt on 7/18/18.
++ */
++public interface VetService {
++
++    Vet findById(Long id);
++
++    Vet save(Vet vet);
++
++    Set<Vet> findAll();
++}
